@@ -1,7 +1,26 @@
 // Specific CSS for your home-page
-.test-font{
-  color: red;
+.wrapper{
+  justify-content: center;
+  display: flex;
 }
-.ytp-right-controls{
-  margin-left: 20px;
+.video{
+  position: relative;
+}
+.container {
+  position: absolute;
+  text-align: center;
+}
+.vid-img{
+  width: 120px;
+  height: 85px;
+}
+.centered {
+  // height/width should always be the slightly smaller than vid.img
+  width: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow-wrap: break-word;
+  color: red;
 }
