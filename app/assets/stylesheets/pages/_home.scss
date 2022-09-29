@@ -3,24 +3,19 @@
   justify-content: center;
   display: flex;
 }
-.video{
-  position: relative;
+
+#video_box{
+  position:relative;
 }
-.container {
-  position: absolute;
-  text-align: center;
-}
-.vid-img{
-  width: 120px;
-  height: 85px;
-}
-.centered {
-  // height/width should always be the slightly smaller than vid.img
-  width: 100px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+#video_overlays {
+  position:absolute;
+  width:120px;
+  height:85px;
+  background-image: url("https://res.cloudinary.com/dth8lnhas/image/upload/v1664284233/board_copy_pqo2na.jpg");
+  background-size: 120px 85px;
   overflow-wrap: break-word;
-  color: red;
+  z-index:300000;
+  top:75px;
+  left:25px;
+  text-align:center;
 }

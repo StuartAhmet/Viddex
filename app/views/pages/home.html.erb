@@ -1,12 +1,29 @@
 <h1>Pages#home</h1>
+<%# use interpolation below %>
 <p>Video for Stuart @ GoCardless</p>
 
-<div>
-  <div class="wrapper">
-    <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/fr-mwiyhZAo" frameborder="0"></iframe>
+<p>youtube</p>
+<div class="wrapper">
+  <div id="video_box">
+      <div id="video_overlays">Hi Stuart GoCardless// Macquarie</div>
+      <div>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/fr-mwiyhZAo?controls=0" frameborder="0" allowfullscreen></iframe>
+      </div>
   </div>
-  <div class="container">
-    <img class="vid-img" src="https://res.cloudinary.com/dth8lnhas/image/upload/v1664284233/board_copy_pqo2na.jpg">
-    <div class="centered">Hi Stuart GoCardless//Macquarie</div>
-  </div>
+
+</div>
+
+<p>cloudinary</p>
+<div class="wrapper">
+
+  <iframe width="560" height="315" src="https://player.cloudinary.com/embed/?dth8lnhas/video/upload/v1664401712/Movie_on_28-09-2022_at_22.47_sugrn6.mov" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<p>custom input - only allows mp4 and possibly ogg</p>
+<div class="wrapper">
+  <video width="560" height="315" controls>
+    <source src="https://res.cloudinary.com/dth8lnhas/video/upload/v1664452541/mov_bbb_dtfqob.mp4" type="video/mp4">
+    <source src="mov_bbb.ogg" type="video/ogg">
+    Your browser does not support HTML video.
+  </video>
 </div>
