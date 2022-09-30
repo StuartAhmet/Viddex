@@ -3,3 +3,16 @@
 @import "avatar";
 @import "form_legend_clear";
 @import "navbar";
+
+.flex{
+  display: flex;
+}
+
+.flex-left{
+  width: 18%;
+
+}
+
+.logo-small{
+  background-image: url("https://res.cloudinary.com/dth8lnhas/image/upload/v1664557034/Screenshot_2022-09-29_at_23.04.59_kuyeux.png");
+}

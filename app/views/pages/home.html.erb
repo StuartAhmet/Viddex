@@ -1,29 +1,37 @@
 <h1>Pages#home</h1>
-<%# use interpolation below %>
-<p>Video for Stuart @ GoCardless</p>
 
-<p>youtube</p>
+<%
+  clientname = "Stu"
+  clientcompany = "GoCardless"
+  prospectname = "Viewer"
+  prospectcompany = "Macquarie"
+  prospecturl = "macquarie.com.au"
+  companyurl = "gocardless.com"
+  favicon = "https://sore-fuchsia-tiger.faviconkit.com/"
+  clientmeetinglink = "https://www.google.com"
+%>
+<%# use interpolation below %>
+<p>Video for <%= prospectname %> @ <%= prospectcompany %> </p>
+
+<img src="https://sore-fuchsia-tiger.faviconkit.com/gocardless.com/16">
+<img src=<%=favicon%><%=prospecturl%><%="/60"%>>
+
 <div class="wrapper">
   <div id="video_box">
-      <div id="video_overlays">Hi Stuart GoCardless// Macquarie</div>
-      <div>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/fr-mwiyhZAo?controls=0" frameborder="0" allowfullscreen></iframe>
-      </div>
+    <div id="video_overlays">Hi Stuart GoCardless// Macquarie</div>
+    <video width="560" height="315" controls>
+      <source src="https://res.cloudinary.com/dth8lnhas/video/upload/v1664452541/mov_bbb_dtfqob.mp4" type="video/mp4" allowfullscreen=0>
+      <source src="mov_bbb.ogg" type="video/ogg">
+      Your browser does not support HTML video.
+    </video>
   </div>
-
 </div>
 
-<p>cloudinary</p>
-<div class="wrapper">
+<select class="form-select" aria-label="Default select example">
+  <option selected>What is most important to you, <%= prospectname %>?</option>
+  <option value="1">One</option>
+  <option value="2">Two</option>
+  <option value="3">Three</option>
+</select>
 
-  <iframe width="560" height="315" src="https://player.cloudinary.com/embed/?dth8lnhas/video/upload/v1664401712/Movie_on_28-09-2022_at_22.47_sugrn6.mov" frameborder="0" allowfullscreen></iframe>
-</div>
-
-<p>custom input - only allows mp4 and possibly ogg</p>
-<div class="wrapper">
-  <video width="560" height="315" controls>
-    <source src="https://res.cloudinary.com/dth8lnhas/video/upload/v1664452541/mov_bbb_dtfqob.mp4" type="video/mp4">
-    <source src="mov_bbb.ogg" type="video/ogg">
-    Your browser does not support HTML video.
-  </video>
-</div>
+<a class="btn btn-primary" href=<%= clientmeetinglink %> role="button">learn more</a>
