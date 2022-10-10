@@ -6,5 +6,8 @@ class User < ApplicationRecord
 
 
   has_one :terminal
-  has_many :videos, through: :terminal
+  has_many :videos
+  has_many :reports
+  has_many :backgrounds
+
 end

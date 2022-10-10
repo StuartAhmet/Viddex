@@ -1,0 +1,14 @@
+<div class="flex-wrapper" style="display: flex; justify-content: center">
+  <% @backgrounds.each do |background| %>
+    <div class="card" style="width: 18rem; margin: 20px 20px;">
+      <% if background.photo.attached? %>
+        <%= cl_image_tag background.photo.key %>
+      <% else %>
+        <img src="https://t3.ftcdn.net/jpg/04/34/72/82/360_F_434728286_OWQQvAFoXZLdGHlObozsolNeuSxhpr84.jpg" class="card-img-top" style="height:50%" alt="...">
+      <% end %>
+      <div class="card-body">
+        <h5 class="card-title" ><%= background.title.capitalize %></h5>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -9,6 +9,11 @@
   companyurl = "gocardless.com"
   favicon = "https://sore-fuchsia-tiger.faviconkit.com/"
   clientmeetinglink = "https://www.google.com"
+  # cld-vid-id = "result_3i2euyh_bnznhz"
+  # cld-bg-id = "room_with_board_gtazil"
+  # video-link "https://res.cloudinary.com/dth8lnhas/video/upload/dl_0/a_180/c_fill,u_"cld-bg-id",w_1280,x_0/v1665164526/"cld-vid-id".mp4"delay
+
+  delay = "#t=0.5"
 %>
 <%# use interpolation below %>
 <p>Video for <%= prospectname %> @ <%= prospectcompany %> </p>
@@ -18,9 +23,9 @@
 
 <div class="wrapper">
   <div id="video_box">
-    <div id="video_overlays">Hi Stuart GoCardless// Macquarie</div>
-    <video width="560" height="315" controls>
-      <source src="https://res.cloudinary.com/dth8lnhas/video/upload/v1664452541/mov_bbb_dtfqob.mp4" type="video/mp4" allowfullscreen=0>
+    <div id="video_overlays">Hi Stuart GoCardless // Macquarie</div>
+    <video width="560" height="315" controls preload="metadata" >
+      <source src= "https://res.cloudinary.com/dth8lnhas/video/upload/dl_0/a_180/c_fill,u_room_with_board_gtazil,w_1280,x_0/v1665164526/result_3i2euyh_bnznhz.mp4#t=0.1" type="video/mp4" allowfullscreen=0>
       <source src="mov_bbb.ogg" type="video/ogg">
       Your browser does not support HTML video.
     </video>

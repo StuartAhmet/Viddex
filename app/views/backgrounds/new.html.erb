@@ -1,0 +1,28 @@
+      <%= link_to user_videos_path do %>
+      <% end %>
+
+
+
+  <%# <%= render "videos/form", video: @video %>
+
+
+
+<div class="page-container pt-8">
+  <div class="flex items-center justify-between mb-8">
+    <div class="w-48">
+    </div>
+    <h2 class="text-xl font-bold">New Background</h2>
+    <div class="w-48"></div>
+  </div>
+  <%= simple_form_for @background, url: user_backgrounds_path do |f| %>
+  <div>
+    <%= f.input :title %>
+    <%= f.input :photo, as: :file %>
+  </div>
+  <div class="flex justify-start items-center pt-8">
+    <div class="flex justify-center items-center h-10 rounded-lg bg-black">
+      <%= f.submit "Create", class: "text-xl mx-8 text-white" %>
+    </div>
+  </div>
+<% end %>
+</div>

@@ -1,5 +1,11 @@
 class TerminalsController < ApplicationController
-  before_action :generate_random_id, only: %i[create]
+  # before_action :generate_random_id, only: %i[new create]
+  before_action :randomize_id, only: %i[new create]
+
+
+  def show
+
+  end
 
   def new
     @terminal = Terminal.new
@@ -15,10 +21,14 @@ class TerminalsController < ApplicationController
   end
 
   private
-  def generate_random_id
-    self.id = SecureRandom.uuid
+  # def generate_random_id
+  #   self.id = SecureRandom.uuid
+  # end
+  def randomize_id
+    begin
+      self.id = SecureRandom.random_number(1_000_000)
+    end while Model.where(id: self.id).exists?
   end
-
 
 
 end
