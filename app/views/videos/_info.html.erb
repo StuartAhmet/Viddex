@@ -1,0 +1,35 @@
+<div class="page-wrap">
+
+  <div>
+    <h1>uploaded videos</h1>
+  </div>
+
+
+
+    <div class="cards">
+      <% @user.videos.each do |video| %>
+        <div class="each-card">
+            <% if video.file.attached? %>
+                <img src="https://image.shutterstock.com/image-vector/play-button-icon-vector-illustration-260nw-1697833306.jpg">
+              <% else %>
+                <img src="https://t3.ftcdn.net/jpg/04/34/72/82/360_F_434728286_OWQQvAFoXZLdGHlObozsolNeuSxhpr84.jpg">
+            <% end %>
+
+
+          <div class="card-text">
+            <div style="display:flex;justify-content:space-between;margin:0px 10px;">
+              <p><%=video.title%></p>
+              <p><%=video.cadence_step%></p>
+            </div>
+              <em><p><%=video.addressed%></p></em>
+          </div>
+
+
+          </div>
+    </div>
+      <% end %>
+      </div>
+
+
+
+</div>
