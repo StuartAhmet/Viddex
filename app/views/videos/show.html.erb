@@ -3,12 +3,13 @@ Title = <%=@video.title.capitalize%> <br>
 Points addressed = <%=@video.addressed.capitalize%> <br>
 Cadence step = <%=@video.cadence_step.capitalize%> <br>
 Current background = <br>
-Overlays = (insert form)<br>
+Overlays = (insert form - will have things like placement, font, what to say etc)<br>
 <h1>options</h1>
 <p>edit</p>
 <p>delete</p>
 
 <%= video_key = @video.file.key %>
+<%= @video.file.url %>
 
  <div class="wrapper">
   <div id="video_box">
