@@ -1,23 +1,10 @@
-<h1>this should be a modal that pops up from the /user_videos_path</h1>
-Title = <%=@video.title.capitalize%> <br>
-Points addressed = <%=@video.addressed.capitalize%> <br>
-Cadence step = <%=@video.cadence_step.capitalize%> <br>
-Current background = <br>
-Overlays = (insert form - will have things like placement, font, what to say etc)<br>
-<h1>options</h1>
-<p>edit</p>
-<p>delete</p>
+<div class="page-wrap">
+  <%= render"videos/navbar" %>
 
-<%= video_key = @video.file.key %>
-<%= @video.file.url %>
 
- <div class="wrapper">
-  <div id="video_box">
-    <div id="video_overlays"></div>
-    <video width="560" height="315" controls preload="metadata" >
-      <source src="https://res.cloudinary.com/dth8lnhas/video/upload/v1664988466/development/<%=video_key%>.mp4" type="video/mp4" allowfullscreen=0>
-      <source src="mov_bbb.ogg" type="video/ogg">
-      Your browser does not support HTML video.
-    </video>
+  <div class="flex gap-5 center" style="width:600px%">
+        <%= render "videos/cards", user: @user, videos: @user.videos %>
+        <%= render "videos/indivdetail", user: @user, videos: @user.videos %>
   </div>
+
 </div>

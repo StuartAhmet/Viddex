@@ -7,6 +7,7 @@ class BackgroundsController < ApplicationController
 
   def show
     @background = Background.find(params[:id])
+    @backgrounds = Background.all
   end
 
   def new
@@ -21,6 +22,11 @@ class BackgroundsController < ApplicationController
     else
       render :new, stauts: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @background = Background.find(params[:id])
+    @background.destroy
   end
 
   private

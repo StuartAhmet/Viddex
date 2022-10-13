@@ -1,14 +1,23 @@
-<div class="flex-wrapper" style="display: flex; justify-content: center">
-  <% @backgrounds.each do |background| %>
-    <div class="card" style="width: 18rem; margin: 20px 20px;">
-      <% if background.photo.attached? %>
-        <%= cl_image_tag background.photo.key %>
-      <% else %>
-        <img src="https://t3.ftcdn.net/jpg/04/34/72/82/360_F_434728286_OWQQvAFoXZLdGHlObozsolNeuSxhpr84.jpg" class="card-img-top" style="height:50%" alt="...">
-      <% end %>
-      <div class="card-body">
-        <h5 class="card-title" ><%= background.title.capitalize %></h5>
-      </div>
-    </div>
-  <% end %>
+<div class="page-wrap">
+
+    <%= render"backgrounds/navbar" %>
+
+  <div class="flex gap-5 center" style="width:600px%">
+        <%= render "backgrounds/cards", user: @user, backgrounds: @user.backgrounds %>
+        <div class="flex-wrap content-start"style="width:40%">
+
+  <%# <div class="flex-wrapper" style="display: flex; justify-content: center"> %>
+      <div class="box orange scroll-container overflow-auto" style="width: 100%; margin: 20px 20px;">
+        <div style="display:flex; justify-content:space-between; margin: 10px 20px">
+          <h3>Select background</h3>
+        </div>
+
+
+
+
+          </div>
+  <%# </div> %>
+        </div>
+
+  </div>
 </div>

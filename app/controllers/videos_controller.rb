@@ -4,16 +4,32 @@ class VideosController < ApplicationController
 
   def index
     @videos = Video.all
+    @referer = request.referer
+
   end
 
   def show
+    @videos = Video.all
     @video = Video.find(params[:id])
+  end
+
+  def edit
+    @video = Video.find(params[:id])
+  end
+
+  def update
+    @video = Video.find(params[:id])
+    @video.update(video_params)
+    redirect_to user_video_path
   end
 
   def new
     @video = Video.new
-
   end
+
+
+
+
 
   def create
     @video = Video.new(video_params)
@@ -39,11 +55,10 @@ class VideosController < ApplicationController
   # end
 
   def video_params
-    params.require(:video).permit(:title, :cadence_step, :addressed, :file)
+    params.require(:video).permit(:title, :cadence_step, :addressed, :file, :background)
   end
 
   def set_user
     @user = User.find(params[:user_id])
   end
-
 end

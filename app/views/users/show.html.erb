@@ -1,17 +1,53 @@
-<ul class="nav nav-tabs" id="myTab" role="tablist">
-  <li class="nav-item" role="presentation">
-    <a class="nav-link active" id="videos-tab"  data-toggle="tab" role="tab" aria-controls="videos" aria-selected="false"> <%= link_to "Videos", user_videos_path(@user, @video) %></a>
-  </li>
-  <li class="nav-item" role="presentation">
-    <a class="nav-link" id="generate-tab" data-bs-toggle="tab" data-bs-target="/generate" type="button" role="tab" aria-controls="generate" aria-selected="false">Generate</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="reports-tab" data-toggle="tab" href="/reports" role="tab" aria-controls="reports" aria-selected="true">Reports</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="tutorials-tab" data-toggle="tab" href="#tutorials" role="tab" aria-controls="tutorials" aria-selected="false">Tutorials</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="false">Account/Settings</a>
-  </li>
-</ul>
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<body>
+  <div class="header">
+    <h1>Videx Terminal</h1>
+
+    <p>Maximising the potential of video outreach</p>
+  </div>
+  <div class="row1-container">
+    <div class="box box-down cyan">
+      <%= link_to user_videos_path(@user, @videos) do %>
+        <h2>Account settings</h2>
+        <p>Manage themes, integrations and team options</p>
+        <img src="https://assets.codepen.io/2301174/icon-supervisor.svg" alt="">
+      <% end %>
+    </div>
+
+    <div class="box red">
+      <%= link_to user_videos_path(@user, @videos) do %>
+        <h2>Videos</h2>
+        <p>Upload, edit and generate videos to send to prospects</p>
+        <img src="https://assets.codepen.io/2301174/icon-team-builder.svg" alt="">
+      <% end %>
+    </div>
+
+    <div class="box box-down blue">
+      <%= link_to user_videos_path(@user, @videos) do %>
+        <h2>Reports</h2>
+        <p>Analyse data from past projects to see whats working and whats not</p>
+        <img src="https://assets.codepen.io/2301174/icon-calculator.svg" alt="">
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row2-container">
+    <div class="box orange">
+      <h2>Tutorials</h2>
+      <p>Not sure? Check out a tutorial</p>
+      <img src="https://assets.codepen.io/2301174/icon-karma.svg" alt="">
+    </div>
+  </div>
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Videx.io</a>.
+    </p>
+  </footer>
+</body>
+
+</html>

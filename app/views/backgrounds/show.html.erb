@@ -1,3 +1,12 @@
+<div class="page-wrap">
+  <%= render"backgrounds/navbar" %>
 
+
+  <div class="flex gap-5 center" style="width:600px%">
+        <%= render "backgrounds/cards", user: @user, backgrounds: @user.backgrounds %>
+        <%= render "backgrounds/indivdetail", user: @user, backgrounds: @user.backgrounds %>
+  </div>
+
+</div>
 URL = <%= @background.photo.url %> <br>
 Key = <%= @background.photo.key %>
