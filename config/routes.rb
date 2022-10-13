@@ -5,13 +5,16 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  resources :users do
-    resources :videos
+  resources :users, :path => 'terminal' do
     resources :generates
     resources :reports
     resources :tutorials
     resources :settings
     resources :backgrounds
+    resources :videos do
+      resources :join_elements, :path => 'join'
+
+    end
 
   end
 

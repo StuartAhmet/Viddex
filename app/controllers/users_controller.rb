@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   # before_action :generate_random_id, only: %i[new create]
-  before_action :randomize_id, only: %i[create], if: :devise_controller?
+  before_action :create_unique_identifier, only: %i[create], if: :devise_controller?
+
+
 
 
   def new
@@ -24,10 +26,11 @@ class UsersController < ApplicationController
   # def generate_random_id
   #   self.id = SecureRandom.uuid
   # end
-  def randomize_id
-    begin
-      self.id = SecureRandom.random_number(1_000_000)
-    end while Model.where(id: self.id).exists?
+  def create_unique_identifier
+    loop do
+      self. unique_identifier = SecureRandom.hex(5) # or whatever you chose like UUID tools
+      break unless self.class.exists?(:unique_identifier => unique_identifier)
+    end
   end
 
   def user_params

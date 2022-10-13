@@ -1,3 +1,5 @@
+<%= link_to user_videos_path do %>
+      <% end %>
 <%= simple_form_for @video, url: user_videos_path do |f| %>
   <div>
     <%= f.input :title %>
@@ -7,7 +9,7 @@
   </div>
   <div class="flex justify-start items-center pt-8">
     <div class="flex justify-center items-center h-10 rounded-lg bg-black">
-      <%= f.submit video.id.nil? ? "Create" : "Save", class: "text-xl mx-8 text-white" %>
+      <%= f.submit "Create", class: "text-xl mx-8 text-white" %>
     </div>
   </div>
 <% end %>
