@@ -3,8 +3,8 @@
 <%# <div class="flex-wrapper" style="display: flex; justify-content: center"> %>
     <div class="box red scroll-container overflow-auto" style="width: 100%; margin: 20px 20px;">
       <div style="display:flex; justify-content:space-between; margin: 10px 20px">
-        <h3>Videos</h3>
-            <%=link_to new_user_video_path(@user, @video) do %>
+        <h3>Projects</h3>
+            <%=link_to new_user_project_path(@user, @project) do %>
                 <div class="flex justify-center items-center w-10 h-10 rounded-full bg-black">
                   <i class="fa-solid fa-plus text-white"></i>
                 </div>
@@ -12,19 +12,11 @@
       </div>
 
       <div class="flex flex-wrap content-start overflow-auto scroll-container" style="justify-content:space-between">
-            <% @user.videos.each do |video| %>
-            <%= link_to user_video_path(@user, video) do %>
+            <% @user.projects.each do |project| %>
+            <%= link_to user_project_path(@user, project) do %>
               <div class="flex" style="flex-direction:column">
-                <div>
-                  <% if video.file.attached? %>
-                      <%= cl_video_tag video.file.key, height: 120, width: 213, crop: :fill, class: "d-block rounded-lg" %>
-                  <% else %>
-                    <img src="https://t3.ftcdn.net/jpg/04/34/72/82/360_F_434728286_OWQQvAFoXZLdGHlObozsolNeuSxhpr84.jpg" style="height:120px;width:213px" alt="...">
-                  <% end %>
-                </div>
-              <div>
-                  <p style="padding:10px 0px;text-decoration: none" ><%= video.title.capitalize %></p>
-              </div>
+
+
             </div>
             <% end %>
             <% end %>

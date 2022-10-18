@@ -11,10 +11,11 @@ Rails.application.routes.draw do
     resources :tutorials
     resources :settings
     resources :backgrounds
-    resources :videos do
-      resources :join_elements, :path => 'join'
+    resources :projects
+    resources :videos
+    resources :join_elements, :path => 'join'
 
-    end
+
 
   end
 

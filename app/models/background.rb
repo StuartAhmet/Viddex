@@ -3,6 +3,8 @@ class Background < ApplicationRecord
   has_one_attached :photo
   has_many :join_elements
   has_many :videos, through: :join_elements
+  has_many :projects, as: :projectable
+
 
 
   validates :title, presence: true

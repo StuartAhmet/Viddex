@@ -1,6 +1,6 @@
 class JoinElementsController < ApplicationController
   before_action :set_user, only: %i[new create]
-  before_action :set_video, only: %i[show new create]
+  # before_action :set_video, only: %i[show new create]
 
   def show
     @join_elements = JoinElement.where(video_id: @video.id)
@@ -13,7 +13,7 @@ class JoinElementsController < ApplicationController
 
   def create
     @backgrounds = Background.where(id: params.dig(:join_element, :background_id))
-    return render_new if @backgrounds.empty?
+    # return render_new if @backgrounds.empty?
 
     ActiveRecord::Base.transaction do
       @backgrounds.each do |item|
@@ -23,7 +23,7 @@ class JoinElementsController < ApplicationController
       redirect_to user_video_path(@user, @video, @join_element)
     end
   rescue ActiveRecord::RecordInvalid
-    render_new
+    # render_new
   end
 
 

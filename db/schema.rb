@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_11_144712) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_18_120212) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -57,6 +57,26 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_11_144712) do
     t.datetime "updated_at", null: false
     t.index ["background_id"], name: "index_join_elements_on_background_id"
     t.index ["video_id"], name: "index_join_elements_on_video_id"
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string "prospect_first"
+    t.string "prospect_last"
+    t.string "prospect_company"
+    t.string "prospect_email"
+    t.text "message"
+    t.bigint "background_id"
+    t.bigint "video_id"
+    t.bigint "user_id"
+    t.boolean "include_meeting_link", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "projectable_type"
+    t.bigint "projectable_id"
+    t.index ["background_id"], name: "index_projects_on_background_id"
+    t.index ["projectable_type", "projectable_id"], name: "index_projects_on_projectable"
+    t.index ["user_id"], name: "index_projects_on_user_id"
+    t.index ["video_id"], name: "index_projects_on_video_id"
   end
 
   create_table "reports", force: :cascade do |t|
@@ -107,6 +127,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_11_144712) do
   add_foreign_key "backgrounds", "users"
   add_foreign_key "join_elements", "backgrounds"
   add_foreign_key "join_elements", "videos"
+  add_foreign_key "projects", "backgrounds"
+  add_foreign_key "projects", "users"
+  add_foreign_key "projects", "videos"
   add_foreign_key "videos", "backgrounds"
   add_foreign_key "videos", "users"
 end
