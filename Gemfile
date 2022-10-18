@@ -29,6 +29,10 @@ gem "jbuilder"
 
 gem "cloudinary"
 
+gem "bootstrap"
+
+gem "popper_js"
+
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"

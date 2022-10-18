@@ -1,0 +1,19 @@
+<div class="flex flex-wrap content-start overflow-auto scroll-container">
+  <% @user.backgrounds.each do |background| %>
+    <div class="w-1/2 flex items-center justify-start mt-4" type="button" data-bs-toggle="modal" data-bs-target=<%= "#exampleModal#{background.id}" %>>
+      <div class="mr-5">
+        <% if background.photo.attached? %>
+          <%= cl_image_tag background.photo.key, height: 75, width: 75, crop: :fill, class: "d-block rounded-lg" %>
+        <% else %>
+          <img src=<%= "https://source.unsplash.com/random/75x75/?restaurant-#{background.name}" %> class="d-block rounded-lg" alt="restaurant image">
+        <% end %>
+      </div>
+
+      <div>
+        <p class="font-bold text-sm"><%= background.title %></p>
+      </div>
+    </div>
+
+    <%# <%= render "join_menus/modal", item: item %> %>
+  <% end %>
+</div>

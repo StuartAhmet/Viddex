@@ -9,5 +9,7 @@ class User < ApplicationRecord
   has_many :videos
   has_many :reports
   has_many :backgrounds
+  has_many :projects, as: :projectable
+
 
 end
