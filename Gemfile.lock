@@ -177,6 +177,8 @@ GEM
     pg (1.4.3)
     popper_js (2.11.6)
     public_suffix (5.0.0)
+    public_uid (2.1.1)
+      activerecord (> 4.2)
     puma (5.6.5)
       nio4r (~> 2.0)
     racc (1.6.0)
@@ -295,6 +297,7 @@ DEPENDENCIES
   jsbundling-rails
   pg (~> 1.1)
   popper_js
+  public_uid
   puma (~> 5.0)
   rails (~> 7.0.4)
   sassc-rails

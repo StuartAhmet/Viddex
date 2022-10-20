@@ -20,7 +20,7 @@ class JoinElementsController < ApplicationController
         @join_element = JoinElement.new(video: @video, background: item)
         @join_element.save!
       end
-      redirect_to user_video_path(@user, @video, @join_element)
+      redirect_to user_path(@user, @video, @join_element)
     end
   rescue ActiveRecord::RecordInvalid
     # render_new
