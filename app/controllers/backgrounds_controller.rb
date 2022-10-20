@@ -1,5 +1,5 @@
 class BackgroundsController < ApplicationController
-  before_action :set_user, only: %i[index show new edit create update destroy]
+  before_action :set_user, only: %i[index show new edit update destroy]
 
   def index
     @backgrounds = Background.all
@@ -18,7 +18,7 @@ class BackgroundsController < ApplicationController
     @background = Background.new(background_params)
     @background.user = current_user
     if @background.save
-      redirect_to user_backgrounds_path(@backgrounds)
+      redirect_to user_backgrounds_path
     else
       render :new, stauts: :unprocessable_entity
     end
@@ -36,7 +36,7 @@ class BackgroundsController < ApplicationController
   end
 
   def set_user
-    @user = User.find(params[:user_id])
+    @user = current_user
   end
 
 end

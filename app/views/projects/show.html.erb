@@ -1,0 +1,32 @@
+<p>prospect first name</p><%= @project.prospect_first %> <br>
+<p>prospect last name</p><%= @project.prospect_last %> <br>
+<p>prospect company</p><%= @project.prospect_company %> <br>
+<p>prospect email</p><%= @project.prospect_email %> <br>
+<p>message</p><%= @project.message %> <br>
+<p>background id</p><%= @project.background_id %> <br>
+<%= @project.background.photo.url %> <br>
+<%= @project.background.photo.key %>
+
+<p>video id</p><%= @project.video_id %> <br>
+<%= @project.video.file.url %> <br>
+<%= @project.video.file.key %>
+
+<p>user ID</p><%= @project.user_id %> <br>
+<p>need to include a meeting link</p>
+
+<p>Video for <%= @project.prospect_first %> @ <%= @project.prospect_company %> </p>
+
+<div class="wrapper">
+  <div id="video_box">
+    <div id="video_overlays"><%= @project.message %></div>
+    <video width="560" height="315" controls preload="metadata" >
+      <source src= "https://res.cloudinary.com/dth8lnhas/video/upload/dl_0/a_180/c_fill,u_development:<%= @project.background.photo.key %>,w_1280,x_0/v1665164526/development/<%= @project.video.file.key %>.mp4#t=0.1" type="video/mp4" allowfullscreen=0>
+      <source src="mov_bbb.ogg" type="video/ogg">
+      Your browser does not support HTML video.
+    </video>
+  </div>
+</div>
+
+cl_video_tag("development/ykycgbwc4z1m1ywazkon6booes10", :underlay=>"room_with_board_gtazil")
+
+https://res.cloudinary.com/dth8lnhas/video/upload/l_room_with_board_gtazil/v1666189346/development/ykycgbwc4z1m1ywazkon6booes10.webm

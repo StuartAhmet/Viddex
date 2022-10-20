@@ -1,0 +1,35 @@
+<div style="display:flex; justify-content:space-between; margin: 10px 20px">
+        <%= link_to user_path(@user) do %>
+            <div class="flex items-center gap-3">
+              <i class="fa-solid fa-chevron-left"></i>
+              <h2 class="text-xl font-bold">Terminal</h2>
+            </div>
+          <% end %>
+
+            <div class="flex justify-center items-center">
+              <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                  <%= link_to user_videos_path(@user, @videos) do %>
+                    <li class="nav-item" role="presentation">
+                      <button class="btn red" id="pills-video-tab" data-bs-toggle="pill" data-bs-target="#pills-video" type="button" role="tab" aria-controls="pills-video" aria-selected="true">Videos</button>
+                    </li>
+                  <% end %>
+                  <%= link_to user_backgrounds_path(@user, @backgrounds) do %>
+                    <li class="nav-item" role="presentation">
+                      <button class="btn red" id="pills-project-tab" data-bs-toggle="pill" data-bs-target="#pills-project" type="button" role="tab" aria-controls="pills-project" aria-selected="false">Backgrounds</button>
+                    </li>
+                  <% end %>
+                    <%= link_to user_projects_path(@user, @projects) do %>
+                    <li class="nav-item" role="presentation">
+                      <button class="btn red" id="pills-project-tab" data-bs-toggle="pill" data-bs-target="#pills-project" type="button" role="tab" aria-controls="pills-project" aria-selected="false">Projects</button>
+                    </li>
+                  <% end %>
+                </ul>
+            </div>
+            <li class="nav-item">
+            <%= link_to destroy_user_session_path, data: {turbo_method: :delete} do %>
+              <span class="nav-link">
+                <h4><%= "Logout" %></h4>
+              </span>
+            <% end %>
+          </li>
+    </div>

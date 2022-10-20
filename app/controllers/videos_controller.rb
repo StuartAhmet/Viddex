@@ -1,5 +1,4 @@
 class VideosController < ApplicationController
-  # before_action :set_terminal, only: [:index, :new, :create]
   before_action :set_user, only: %i[index show new edit update destroy]
 
   def index
@@ -36,7 +35,7 @@ class VideosController < ApplicationController
     @video.user = current_user
     # @video = @terminal.videos.new
     if @video.save
-      redirect_to user_videos_path(@video)
+      redirect_to user_videos_path
     else
       render :new, stauts: :unprocessable_entity
     end
@@ -50,15 +49,11 @@ class VideosController < ApplicationController
 
   private
 
-  # def set_terminal
-  #   @terminal = Terminal.find(params[:terminal_id])
-  # end
-
   def video_params
-    params.require(:video).permit(:title, :cadence_step, :addressed, :file, :background)
+    params.require(:video).permit(:title, :cadence_step, :addressed, :file)
   end
 
   def set_user
-    @user = User.find(params[:user_id])
+    @user = current_user
   end
 end

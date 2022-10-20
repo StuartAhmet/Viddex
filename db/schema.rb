@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_18_120212) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_20_135230) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -73,6 +73,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_18_120212) do
     t.datetime "updated_at", null: false
     t.string "projectable_type"
     t.bigint "projectable_id"
+    t.string "public_uid"
     t.index ["background_id"], name: "index_projects_on_background_id"
     t.index ["projectable_type", "projectable_id"], name: "index_projects_on_projectable"
     t.index ["user_id"], name: "index_projects_on_user_id"
@@ -106,7 +107,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_18_120212) do
     t.string "last_name"
     t.string "company_name"
     t.string "industry"
+    t.string "public_uid"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["public_uid"], name: "index_users_on_public_uid", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
@@ -122,6 +125,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_18_120212) do
     t.index ["user_id"], name: "index_videos_on_user_id"
   end
 
+  create_table "watches", force: :cascade do |t|
+    t.bigint "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_watches_on_project_id"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "backgrounds", "users"
@@ -132,4 +142,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_18_120212) do
   add_foreign_key "projects", "videos"
   add_foreign_key "videos", "backgrounds"
   add_foreign_key "videos", "users"
+  add_foreign_key "watches", "projects"
 end

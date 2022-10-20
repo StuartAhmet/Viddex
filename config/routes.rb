@@ -6,17 +6,15 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   resources :users, :path => 'terminal' do
-    resources :generates
     resources :reports
     resources :tutorials
     resources :settings
     resources :backgrounds
-    resources :projects
+    resources :projects, only: [:new, :create, :index]
     resources :videos
-    resources :join_elements, :path => 'join'
-
-
-
   end
+  resources :projects, :path => 'watch', only: [:show]
+
+  # resources :watches, :path => 'test'
 
 end

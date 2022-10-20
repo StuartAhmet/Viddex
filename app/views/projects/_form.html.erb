@@ -1,0 +1,30 @@
+
+<div class="page-container pt-8">
+  <div class="flex items-center justify-between mb-8">
+    <div class="w-48">
+    </div>
+    <h2 class="text-xl font-bold">New Project</h2>
+    <div class="w-48"></div>
+  </div>
+  <%= simple_form_for [@user, @project] do |f| %>
+  <div>
+    <%= f.input :prospect_first, label: "Prospect first name", placeholder: "Required" %>
+    <%= f.input :prospect_last %>
+    <%= f.input :prospect_company %>
+    <%= f.input :prospect_email %>
+    <%= f.input :message %>
+  </div>
+  <div >
+
+      <%= f.association :background, collection: @user.backgrounds,  prompt: "select a background", label: "Select background", :value => @user_backgrounds, as: :radio_buttons, input_html: { multiple: false } %>
+  </div>
+  <div class="overflow-auto scroll-container mb-8 mx-8">
+      <%= f.association :video, collection: @user.videos,  prompt: "select a video", label: "Select video", :value => @user_videos, as: :radio_buttons, input_html: { multiple: false } %>
+  </div>
+  <div class="flex justify-start items-center pt-8">
+    <div class="flex justify-center items-center h-10 rounded-lg bg-black">
+      <%= f.submit "Create", class: "text-xl mx-8 text-white" %>
+    </div>
+  </div>
+<% end %>
+</div>

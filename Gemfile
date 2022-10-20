@@ -33,6 +33,8 @@ gem "bootstrap"
 
 gem "popper_js"
 
+gem 'public_uid'
+
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
