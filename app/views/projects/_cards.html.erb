@@ -12,21 +12,40 @@
       </div>
 
       <div class="flex flex-wrap content-start overflow-auto scroll-container" style="justify-content:space-between">
-            <% @user.projects.each do |project| %>
-            <%= project.prospect_first %>
-            <%= project.video.file.url %>
-            <%= project.video.file.key %>
+            <% @user.projects.order(:id).reverse.each do |project| %>
+            <div class="wrapper" type="button" data-bs-toggle="modal" data-bs-target=<%= "#exampleModal#{project.id}" %>>
+              <div id="video_box">
+                <div id="video_overlays"><%= project.message %></div>
 
-            <%= project.background.photo.url %>
-            <%= project.background.photo.key %>
+                <video width="560" height="315" controls preload="metadata" >
+                  <source src= "https://res.cloudinary.com/dth8lnhas/video/upload/dl_0/a_180/c_fill,u_development:<%= project.background.photo.key %>,w_1280,x_0/v1665164526/development/<%= project.video.file.key %>.mp4#t=0.1" type="video/mp4" allowfullscreen=0>
+                  <source src="mov_bbb.ogg" type="video/ogg">
+                  Your browser does not support HTML video.
+                </video>
+              </div>
+            </div>
+            <%= project.prospect_first %> <%= project.prospect_last %> <br>
+            <%= project.prospect_company %>
+
 
               <div class="flex" style="flex-direction:column">
 
 
             </div>
+            <%= render "projects/modal", project: project %>
+
             <% end %>
 
       </div>
+
+
+
+    </div>
+<%# </div> %>
+</div>
+
+
+
 
 
 

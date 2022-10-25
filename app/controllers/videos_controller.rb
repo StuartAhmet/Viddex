@@ -44,7 +44,7 @@ class VideosController < ApplicationController
   def destroy
     @video = Video.find(params[:id])
     @video.destroy
-    # redirect_to terminal_videos_path, notice: 'Video deleted', status: :see_other
+    redirect_to user_videos_path, notice: 'Video deleted', status: :see_other
   end
 
   private
