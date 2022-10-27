@@ -1,5 +1,8 @@
 class VideosController < ApplicationController
   before_action :set_user, only: %i[index show new edit update destroy]
+  before_action :set_video, only: %i[show edit update destroy]
+  before_action :authenticate_user!
+
 
   def index
     @videos = Video.all
@@ -13,7 +16,7 @@ class VideosController < ApplicationController
   end
 
   def edit
-    @video = Video.find(params[:id])
+    @video = Video.find_by(public_uid: params[:id])
   end
 
   def update
@@ -55,5 +58,9 @@ class VideosController < ApplicationController
 
   def set_user
     @user = current_user
+  end
+
+  def set_video
+    @video = Video.find_by(public_uid: params[:id])
   end
 end

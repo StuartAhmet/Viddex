@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_21_204033) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_27_124818) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -47,6 +47,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_21_204033) do
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.string "title"
+    t.string "public_uid"
     t.index ["user_id"], name: "index_backgrounds_on_user_id"
   end
 
@@ -125,6 +126,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_21_204033) do
     t.text "addressed"
     t.bigint "user_id"
     t.bigint "background_id"
+    t.string "public_uid"
     t.index ["background_id"], name: "index_videos_on_background_id"
     t.index ["user_id"], name: "index_videos_on_user_id"
   end
