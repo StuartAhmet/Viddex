@@ -5,10 +5,10 @@
 
       </div>
 
-       <div class="flex" style="flex-direction:column">
+       <div class="flex" style="justify-content:center; margin-top:10px">
                 <div>
                   <% if background.photo.attached? %>
-                      <%= cl_image_tag background.photo.key, height: 120, width: 213, crop: :fill, class: "d-block rounded-lg" %>
+                      <%= cl_image_tag background.photo.key, height: 240, width: 426, crop: :fill, class: "d-block rounded-lg" %>
                   <% else %>
                     <img src="https://t3.ftcdn.net/jpg/04/34/72/82/360_F_434728286_OWQQvAFoXZLdGHlObozsolNeuSxhpr84.jpg" style="height:120px;width:213px" alt="...">
                   <% end %>
@@ -20,10 +20,12 @@
         <h5 class="text-center text-xl font-bold" id="exampleModalLabel"><%= background.title.capitalize %></h5>
 
       </div>
-      <button type="button" class="bg-black px-5 py-2 text-white rounded-lg mt-3" data-bs-dismiss="modal">Edit</button>
-      <%= link_to user_videos_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
-        <p class="bg-black px-5 py-2 text-white rounded-lg mt-3">Delete</p>
-      <% end %>
+      <div class="flex" style="width:426px; margin:0px 35px 0px 35px; justify-content:space-between">
+        <button type="button" class="bg-black btn-modal px-5 py-2 text-white rounded-lg mt-3" data-bs-dismiss="modal">Edit</button>
+        <%= link_to user_videos_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+          <p class="bg-black btn-modal px-5 py-2 text-white rounded-lg mt-3">Delete</p>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

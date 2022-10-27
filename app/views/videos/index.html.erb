@@ -1,10 +1,20 @@
 <div class="page-wrap">
 
-    <%= render"shared/terminalnav" %>
+  <%= render"shared/terminalnav" %>
+  <div class="flex center">
+    <div style="display:flex; justify-content:space-between; width:80%; margin-top: 20px; ">
+      <h3>Videos</h3>
+            <%=link_to new_user_video_path(@user, @video) do %>
+                <button style="border-radius:5px;width:250px;background-color:blue;color:white"class="btn red btn-outline-dark" id="pills-project-tab" data-bs-toggle="pill" data-bs-target="#pills-project" type="button" role="tab" aria-controls="pills-project" aria-selected="false">Upload new video</button>
+                <%# <div class="flex justify-center items-center w-10 h-10 rounded-full bg-black">
+                  <i class="fa-solid fa-plus text-white"></i>
+                </div> %>
+            <% end %>
+    </div>
+  </div>
 
-  <div class="flex gap-5 center" style="width:600px%">
+  <div class="flex center" style="width:600px%">
         <%= render "videos/cards", user: @user, videos: @user.videos %>
-        <div class="flex-wrap content-start"style="width:40%">
 
   <%# <div class="flex-wrapper" style="display: flex; justify-content: center"> %>
       <%# <div class="box red scroll-container overflow-auto" style="width: 100%; margin: 20px 20px;">
@@ -15,7 +25,7 @@
 
 
 
-          </div>
+
   <%# </div> %>
         </div>
 

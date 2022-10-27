@@ -20,10 +20,15 @@
         <p class="text-center mt-2"><%= video.cadence_step %></p>
         <p class="text-center text-xl font-bold mt-2"><%= video.addressed %></p>
       </div>
-      <button type="button" class="bg-black px-5 py-2 text-white rounded-lg mt-3" data-bs-dismiss="modal">Edit</button>
-      <%= link_to user_videos_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
-        <p class="bg-black px-5 py-2 text-white rounded-lg mt-3">Delete</p>
-      <% end %>
+
+      <div class="flex" style="margin:0px 35px 0px 35px; justify-content:space-between">
+
+
+          <button type="button" class="bg-black btn-modal px-5 py-2 text-white rounded-lg mt-3" data-bs-dismiss="modal">Edit</button>
+          <%= link_to user_videos_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+            <p class="bg-black btn-modal px-5 py-2 text-white rounded-lg mt-3">Delete</p>
+          <% end %>
+      </div>
     </div>
   </div>
 </div>
