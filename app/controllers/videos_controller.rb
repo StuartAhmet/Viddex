@@ -19,7 +19,7 @@ class VideosController < ApplicationController
   def update
     @video = Video.find(params[:id])
     @video.update(video_params)
-    redirect_to user_video_path
+    redirect_to user_videos_path
   end
 
   def new
