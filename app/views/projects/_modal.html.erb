@@ -22,10 +22,11 @@
       </div>
       <div class="flex" style="margin:0px 35px 0px 35px; justify-content:space-between">
         <button class="bg-black btn-modal px-5 py-2 text-white rounded-lg mt-3"><a href="/watch/<%=project.public_uid%>">View</a></button>
-        <button type="button" class="bg-black btn-modal px-5 py-2 text-white rounded-lg mt-3" data-bs-dismiss="modal">Edit</button>
-        <%= link_to user_projects_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
-          <p class="bg-black btn-modal px-5 py-2 text-white rounded-lg mt-3">Delete</p>
-        <% end %>
+        <button type="button" class="bg-black btn-modal px-5 py-2 text-white rounded-lg mt-3" data-bs-dismiss="modal"><a href="/terminal/<%= @user.public_uid %>/projects/<%= project.public_uid%>/edit" >Edit</a></button>
+        <a data-turbo-method="delete" class="bg-black btn-modal px-5 py-2 text-white rounded-lg mt-3" data-turbo-confirm="Are you sure?" href="/terminal/<%= @user.public_uid %>/projects/<%= project.public_uid%>">
+              Delete
+          </a>
+
       </div>
     </div>
   </div>

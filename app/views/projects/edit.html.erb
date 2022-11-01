@@ -1,4 +1,4 @@
- <%= link_to user_backgrounds_path do %>
+ <%= link_to user_projects_path do %>
       <% end %>
 
 
@@ -8,9 +8,14 @@
 
 
 <div class="container pt-4 col-4">
-  <h1>Edit Background</h1>
-  <%= simple_form_for [@user, @background] do |f| %>
-    <%= f.input :title %>
+  <h1>Edit Project</h1>
+  <%= simple_form_for [@user, @project] do |f| %>
+    <%= f.input :prospect_first %>
+    <%= f.input :prospect_last  %>
+    <%= f.input :prospect_company %>
+    <%= f.input :prospect_email %>
+    <%= f.input :message %>
+
     <%= f.submit class: 'btn btn-success text-white' %>
   <% end %>
 

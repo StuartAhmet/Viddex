@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     resources :tutorials
     resources :settings
     resources :backgrounds
-    resources :projects, only: [:new, :create, :index, :destroy]
+    resources :projects, only: [:new, :create, :edit, :update, :index, :destroy]
     resources :videos
   end
   resources :projects, :path => 'watch', only: [:show]

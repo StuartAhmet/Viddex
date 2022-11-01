@@ -15,7 +15,7 @@
     <%= f.input :title %>
     <%= f.input :cadence_step  %>
     <%= f.input :addressed %>
-
+    <%= f.input :rotation, collection: Video::ROTATION %>
     <%= f.submit class: 'btn btn-success text-white' %>
   <% end %>
 
