@@ -3,16 +3,14 @@ class VideosController < ApplicationController
   before_action :set_video, only: %i[show edit update destroy]
   before_action :authenticate_user!
 
-
   def index
     @videos = Video.all
     @referer = request.referer
-
   end
 
   def show
     @videos = Video.all
-    @video = Video.find(params[:id])
+    @video = Video.find_by(public_uid: params[:id])
   end
 
   def edit
@@ -20,7 +18,7 @@ class VideosController < ApplicationController
   end
 
   def update
-    @video = Video.find(params[:id])
+    @video = Video.find_by(public_uid: params[:id])
     @video.update(video_params)
     redirect_to user_videos_path
   end
@@ -29,14 +27,9 @@ class VideosController < ApplicationController
     @video = Video.new
   end
 
-
-
-
-
   def create
     @video = Video.new(video_params)
     @video.user = current_user
-    # @video = @terminal.videos.new
     if @video.save
       redirect_to user_videos_path
     else
@@ -45,7 +38,7 @@ class VideosController < ApplicationController
   end
 
   def destroy
-    @video = Video.find(params[:id])
+    @video = Video.find_by(public_uid: params[:id])
     @video.destroy
     redirect_to user_videos_path, notice: 'Video deleted', status: :see_other
   end
@@ -53,7 +46,7 @@ class VideosController < ApplicationController
   private
 
   def video_params
-    params.require(:video).permit(:title, :cadence_step, :addressed, :file)
+    params.require(:video).permit(:title, :cadence_step, :rotation, :addressed, :file)
   end
 
   def set_user

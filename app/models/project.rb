@@ -10,7 +10,6 @@ class Project < ApplicationRecord
   belongs_to :user
   belongs_to :background
   belongs_to :video
-  has_many :watches
 
   validates :prospect_first, presence: true
   validates :prospect_company, presence: true

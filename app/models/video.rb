@@ -13,4 +13,6 @@ class Video < ApplicationRecord
 
   validates :title, presence: true
   validates :file, presence: true
+
+  ROTATION = ['0', '90', '180', '270']
 end

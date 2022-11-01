@@ -34,6 +34,23 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def edit
+    @project = Project.find_by(public_uid: params[:id])
+  end
+
+  def update
+    @project = Project.find_by(public_uid: params[:id])
+    @project.update(project_params)
+    redirect_to user_projects_path
+  end
+
+  def destroy
+    @project = Project.find_by(public_uid: params[:id])
+    @project.destroy
+    redirect_to user_projects_path, notice: 'Project deleted', status: :see_other
+
+  end
+
   private
 
   def set_user
@@ -43,14 +60,6 @@ class ProjectsController < ApplicationController
   def set_project
     @project = Project.find_by(public_uid: params[:id])
   end
-
-  # def set_watch
-  #   Watch.create!
-  # end
-
-  # def user_backgrounds
-  #   @backgrounds = @user.backgrounds
-  # end
 
   def project_params
     params.require(:project).permit(:background_id, :video_id, :prospect_first,
