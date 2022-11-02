@@ -20,7 +20,4 @@ Rails.application.routes.draw do
     resources :videos
   end
   resources :projects, :path => 'watch', only: [:show]
-
-  # resources :watches, :path => 'test'
-
 end
