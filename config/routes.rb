@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: {
-    registrations: 'user/registrations',
-    sessions: 'users/sessions',
-    omniauth_callbacks: 'users/omniauth_callbacks'
-    }
+  devise_for :users
+  # controllers: {
+  #   registrations: 'user/registrations',
+  #   sessions: 'users/sessions',
+  #   omniauth_callbacks: 'users/omniauth_callbacks'
+  #   }
 
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -19,7 +20,4 @@ Rails.application.routes.draw do
     resources :videos
   end
   resources :projects, :path => 'watch', only: [:show]
-
-  # resources :watches, :path => 'test'
-
 end
