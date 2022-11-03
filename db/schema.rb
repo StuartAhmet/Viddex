@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_31_105258) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_03_113738) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -51,15 +51,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_31_105258) do
     t.index ["user_id"], name: "index_backgrounds_on_user_id"
   end
 
-  create_table "join_elements", force: :cascade do |t|
-    t.bigint "video_id", null: false
-    t.bigint "background_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["background_id"], name: "index_join_elements_on_background_id"
-    t.index ["video_id"], name: "index_join_elements_on_video_id"
-  end
-
   create_table "projects", force: :cascade do |t|
     t.string "prospect_first"
     t.string "prospect_last"
@@ -72,28 +63,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_31_105258) do
     t.boolean "include_meeting_link", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "projectable_type"
-    t.bigint "projectable_id"
     t.string "public_uid"
     t.index ["background_id"], name: "index_projects_on_background_id"
-    t.index ["projectable_type", "projectable_id"], name: "index_projects_on_projectable"
     t.index ["user_id"], name: "index_projects_on_user_id"
     t.index ["video_id"], name: "index_projects_on_video_id"
-  end
-
-  create_table "reports", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "settings", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "terminals", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -125,29 +98,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_31_105258) do
     t.string "title"
     t.text "addressed"
     t.bigint "user_id"
-    t.bigint "background_id"
     t.string "public_uid"
     t.string "rotation"
-    t.index ["background_id"], name: "index_videos_on_background_id"
     t.index ["user_id"], name: "index_videos_on_user_id"
-  end
-
-  create_table "watches", force: :cascade do |t|
-    t.bigint "project_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["project_id"], name: "index_watches_on_project_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "backgrounds", "users"
-  add_foreign_key "join_elements", "backgrounds"
-  add_foreign_key "join_elements", "videos"
   add_foreign_key "projects", "backgrounds"
   add_foreign_key "projects", "users"
   add_foreign_key "projects", "videos"
-  add_foreign_key "videos", "backgrounds"
   add_foreign_key "videos", "users"
-  add_foreign_key "watches", "projects"
 end
