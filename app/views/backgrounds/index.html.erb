@@ -1,30 +1,12 @@
-<div class="page-wrap">
 
-    <%= render"shared/terminalnav" %>
-    <div class="flex center">
-      <div style="display:flex; justify-content:space-between; width:80%; margin-top: 20px; ">
-        <h3>Backgrounds</h3>
-          <%=link_to new_user_background_path(@user, @background) do %>
-            <button style="border-radius:5px;width:250px;background-color:blue;color:white"class="btn red btn-outline-dark" id="pills-project-tab" data-bs-toggle="pill" data-bs-target="#pills-project" type="button" role="tab" aria-controls="pills-project" aria-selected="false">Upload background</button>
-          <% end %>
-      </div>
+ <div class="page-wrap">
+  <%= render"shared/terminalnav" %>
+  <div class="flex">
+    <%= render "shared/sidebar" %>
+    <div class="flex-column"style="width:100%; margin: 20px; ">
+      <%= render "shared/pagehead" %>
+      <%= render "shared/pagetabs" %>
+      <%= render "backgrounds/cards", user: @user, backgrounds: @user.backgrounds %>
     </div>
-
-  <div class="flex center" style="width:600px%">
-        <%= render "backgrounds/cards", user: @user, backgrounds: @user.backgrounds %>
-
-  <%# <div class="flex-wrapper" style="display: flex; justify-content: center"> %>
-      <%# <div class="box orange scroll-container overflow-auto" style="width: 100%; margin: 20px 20px;">
-        <div style="display:flex; justify-content:space-between; margin: 10px 20px">
-          <h3>Select background</h3>
-        </div>
-
-
-
-
-          </div> %>
-  <%# </div> %>
-
-
   </div>
 </div>

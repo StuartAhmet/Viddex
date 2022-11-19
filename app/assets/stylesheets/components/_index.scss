@@ -14,9 +14,36 @@
 
 .flex-left{
   width: 18%;
-
 }
 
-.logo-small{
-  background-image: url("https://res.cloudinary.com/dth8lnhas/image/upload/v1664557034/Screenshot_2022-09-29_at_23.04.59_kuyeux.png");
+.tal{
+  text-align: left;
+}
+
+.br5{
+  border-radius: 5px;
+}
+
+.mr10{
+  margin-right: 10px;
+}
+
+.pl20{
+  padding-left: 20px;
+}
+
+.pt10{
+  padding-top: 10px;
+}
+
+.space-between{
+  justify-content: space-between;
+}
+
+.up-btn{
+  width: 70%;
+  border-radius: 5px;
+  height: 38px;
+  background-color: cornflowerblue;
+  border: solid 1px grey;
 }

@@ -1,18 +1,13 @@
-<%= render"shared/terminalnav" %>
 
-  <%= simple_form_for @background, url: user_backgrounds_path do |f| %>
-  <div class="flex" style="justify-content:center;">
-    <div class="box blue" style="width:600px; margin-top:40px">
-      <h2>Upload Background</h2>
-      <div>
-        <%= f.input :photo, as: :file, label: false %>
-        <%= f.input :title %>
-      </div>
-      <div class="flex justify-start items-center pt-8">
-        <div class="flex justify-center items-center h-10 rounded-lg bg-black" style="width:100%;border-radius:5px">
-          <%= f.submit "Upload", class: "text-xl mx-8 text-black", style: "width:100%;border-radius:5px" %>
-        </div>
-      </div>
+
+<div class="page-wrap">
+  <%= render"shared/terminalnav" %>
+  <div class="flex">
+    <%= render "shared/sidebar" %>
+    <div class="flex-column"style="width:100%; margin: 20px; ">
+      <%= render "shared/pagehead" %>
+      <%= render "backgrounds/pagetabs" %>
+      <%= render "backgrounds/newform", user: @user, backgrounds: @user.backgrounds %>
     </div>
   </div>
-<% end %>
+</div>

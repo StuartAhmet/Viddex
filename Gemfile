@@ -35,6 +35,8 @@ gem "popper_js"
 
 gem 'public_uid'
 
+gem "rails_admin", "~> 3.0"
+
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem "omniauth-rails_csrf_protection", "~> 1.0"
@@ -87,3 +89,4 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+gem "cssbundling-rails"

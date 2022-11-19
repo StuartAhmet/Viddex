@@ -6,3 +6,8 @@ import { application } from "./application"
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+// import CopyElementController from "./copy_element_controller"
+// application.register("copy-element", CopyElementController)
+
+// import { Controller } from "@hotwired/stimulus"

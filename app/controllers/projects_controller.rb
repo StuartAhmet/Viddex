@@ -41,7 +41,7 @@ class ProjectsController < ApplicationController
   def update
     @project = Project.find_by(public_uid: params[:id])
     @project.update(project_params)
-    redirect_to user_projects_path
+    redirect_to edit_user_project_path
   end
 
   def destroy

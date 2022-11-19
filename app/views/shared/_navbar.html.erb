@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to "#", class: "" do %>
-      <%= image_tag "https://res.cloudinary.com/dth8lnhas/image/upload/v1664557034/Screenshot_2022-09-29_at_23.04.59_kuyeux.png" %>
+      <%= image_tag "https://res.cloudinary.com/dth8lnhas/image/upload/v1667829304/Viddex_logo_3_frlznu.png" %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,7 +17,10 @@
               <span class="nav-link">
                 <h4><%= "Logout" %></h4>
               </span>
-            <% end %>
+              <% end %>
+            <button type="button" class="bg-black btn-modal px-5 py-2 text-white rounded-lg mt-3" data-bs-dismiss="modal"><a href="/terminal/<%= current_user.public_uid %>" >My terminal</a></button>
+
+
           </li>
 
         <% else %>
