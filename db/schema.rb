@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_03_113738) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_10_115623) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -48,6 +48,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_03_113738) do
     t.bigint "user_id"
     t.string "title"
     t.string "public_uid"
+    t.integer "x_axis", default: 350
+    t.integer "y_axis", default: 250
+    t.integer "width", default: 350
+    t.integer "angle", default: 0
     t.index ["user_id"], name: "index_backgrounds_on_user_id"
   end
 
@@ -64,6 +68,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_03_113738) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "public_uid"
+    t.integer "opacity", default: 70
+    t.string "font", default: "permanent marker"
+    t.integer "font_size", default: 38
     t.index ["background_id"], name: "index_projects_on_background_id"
     t.index ["user_id"], name: "index_projects_on_user_id"
     t.index ["video_id"], name: "index_projects_on_video_id"
@@ -86,6 +93,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_03_113738) do
     t.string "uid"
     t.string "full_name"
     t.string "avatar_url"
+    t.boolean "admin", default: false, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["public_uid"], name: "index_users_on_public_uid", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

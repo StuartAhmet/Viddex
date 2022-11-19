@@ -1,5 +1,3 @@
-<div class="flex-wrap content-start" style="width:80%">
-    <div class="box orange scroll-container overflow-auto" style="width: 100%;margin-left:0;height:83vh">
       <div class="flex flex-wrap content-start overflow-auto " style="justify-content:flex-start">
             <% @user.backgrounds.reverse.each do |background| %><%= render "backgrounds/modal", background: background %>
               <div class="flex" style="flex-direction:column"  type="button" data-bs-toggle="modal" data-bs-target=<%= "#exampleModal#{background.id}" %>>
@@ -8,8 +6,9 @@
                       <%= cl_image_tag background.photo.key,
                       height: 120, width: 213, crop: :fill,
                       class: "d-block rounded-lg toprd5px" %>
+
                   <% else %>
-                    <img src="https://t3.ftcdn.net/jpg/04/34/72/82/360_F_434728286_OWQQvAFoXZLdGHlObozsolNeuSxhpr84.jpg" style="height:120px;width:213px" alt="...">
+                    <p>image not loading</p>
                   <% end %>
                   <p style="padding:10px 0px;margin-left:12px;" ><%= background.title.capitalize %></p>
                   <% mbsize = background.photo.byte_size.to_f / 1048576 %>
@@ -24,6 +23,4 @@
 
 
 
-    </div>
 <%# </div> %>
-</div>

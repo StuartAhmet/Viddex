@@ -1,24 +1,30 @@
- <%= link_to user_projects_path do %>
+
+
+<div class="flex">
+  <div class="container pt-4 col-4">
+    <h1>Edit Project</h1>
+    <%= simple_form_for [@user, @project] do |f| %>
+      <div class="flex">
+        <%= f.input :prospect_first %>
+        <%= f.input :prospect_last  %>
+      </div>
+
+      <div class="flex">
+        <%= f.input :prospect_company %>
+        <%= f.input :prospect_email %>
+      </div>
+      <%= f.input :message %>
+      <div class="flex">
+        <%= f.submit 'Save and preview', class: 'btn btn-outline-dark', style:"border-radius:5px"%>
       <% end %>
-
-
-
-
-<div class = "banner-new" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1598928506311-c55ded91a20c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);">
-
-
-<div class="container pt-4 col-4">
-  <h1>Edit Project</h1>
-  <%= simple_form_for [@user, @project] do |f| %>
-    <%= f.input :prospect_first %>
-    <%= f.input :prospect_last  %>
-    <%= f.input :prospect_company %>
-    <%= f.input :prospect_email %>
-    <%= f.input :message %>
-
-    <%= f.submit class: 'btn btn-success text-white' %>
-  <% end %>
-
-  <br>
-
+        <%= link_to user_projects_path(@user, @projects) do %>
+          <button style="border-radius:5px"class="btn btn-outline-dark"  data-bs-toggle="pill" data-bs-target="#pills-video" type="button" role="tab" aria-controls="pills-video" aria-selected="true">
+            <i class="fa-solid fa-chevron-left"></i>Back
+            </button>
+        <% end %>
+      </div>
+  </div>
+  <div id="video_box">
+      <%= render  "projects/projectvideo"%>
+  </div>
 </div>

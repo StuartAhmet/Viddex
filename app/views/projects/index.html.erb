@@ -1,22 +1,11 @@
 <div class="page-wrap">
-
-    <%= render"shared/terminalnav" %>
-
-  <div class="flex gap-5 center" style="width:600px%">
-        <%= render "projects/cards", user: @user, projects: @user.projects %>
-        <div class="flex-wrap content-start"style="width:40%">
-
-  <%# <div class="flex-wrapper" style="display: flex; justify-content: center"> %>
-      <%# <div class="box red scroll-container overflow-auto" style="width: 100%; margin: 20px 20px;">
-        <div style="display:flex; justify-content:space-between; margin: 10px 20px">
-          <h3>Select project</h3>
-        </div>
-
-
-
-
-          </div> %>
-  <%# </div> %>
-        </div>
-
+  <%= render"shared/terminalnav" %>
+  <div class="flex">
+    <%= render "shared/sidebar" %>
+    <div class="flex-column"style="width:100%; margin: 20px; ">
+      <%= render "shared/pagehead" %>
+      <%= render "projects/pagetabs" %>
+      <%= render "projects/cards", user: @user, projects: @user.projects %>
+    </div>
   </div>
+</div>

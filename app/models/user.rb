@@ -21,7 +21,6 @@ class User < ApplicationRecord
   end
 
 
-  has_one :terminal
   has_many :videos
   has_many :reports
   has_many :backgrounds
