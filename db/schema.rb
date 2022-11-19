@@ -65,6 +65,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_10_115623) do
     t.bigint "video_id"
     t.bigint "user_id"
     t.boolean "include_meeting_link", default: true
+    t.string "projectable_type"
+    t.bigint "projectable_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "public_uid"
@@ -72,6 +74,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_10_115623) do
     t.string "font", default: "permanent marker"
     t.integer "font_size", default: 38
     t.index ["background_id"], name: "index_projects_on_background_id"
+    t.index ["projectable_type", "projectable_id"], name: "index_projects_on_projectable"
     t.index ["user_id"], name: "index_projects_on_user_id"
     t.index ["video_id"], name: "index_projects_on_video_id"
   end
