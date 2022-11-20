@@ -1,24 +1,11 @@
-<h1>this should be a pop up modal</h1>
-
- <%= link_to user_videos_path do %>
-      <% end %>
-
-
-
-
-<div class = "banner-new" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1598928506311-c55ded91a20c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);">
-
-
-<div class="container pt-4 col-4">
-  <h1>Edit Video</h1>
-  <%= simple_form_for [@user, @video] do |f| %>
-    <%= f.input :title %>
-    <%= f.input :cadence_step  %>
-    <%= f.input :addressed %>
-    <%= f.input :rotation, collection: Video::ROTATION %>
-    <%= f.submit class: 'btn btn-success text-white' %>
-  <% end %>
-
-  <br>
-
+<div class="page-wrap">
+  <%= render"shared/terminalnav" %>
+  <div class="flex">
+    <%= render "shared/sidebar" %>
+    <div class="flex-column"style="width:100%; margin: 20px; ">
+      <%= render "shared/pagehead" %>
+      <%= render "videos/pagetabs" %>
+      <%= render "videos/edit", user: @user, videos: @user.videos %>
+    </div>
+  </div>
 </div>
