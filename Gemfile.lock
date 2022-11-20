@@ -348,7 +348,7 @@ DEPENDENCIES
   dotenv-rails
   font-awesome-sass (~> 6.1)
   jbuilder
-  jsbundling-rails (~> 0.1.0)
+  jsbundling-rails (~> 0.1.7)
   omniauth
   omniauth-google-oauth2
   omniauth-rails_csrf_protection (~> 1.0)

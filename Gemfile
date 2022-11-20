@@ -36,7 +36,7 @@ gem "popper_js"
 gem 'public_uid'
 
 gem "rails_admin", "~> 3.0"
-gem "jsbundling-rails", "~> 0.1.0"
+gem "jsbundling-rails", "~> 0.1.7"
 
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
