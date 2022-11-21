@@ -348,11 +348,7 @@ DEPENDENCIES
   dotenv-rails
   font-awesome-sass (~> 6.1)
   jbuilder
-<<<<<<< HEAD
-  jsbundling-rails (~> 0.1.7)
-=======
   jsbundling-rails
->>>>>>> parent of 3d93d5c (updated gemfile)
   omniauth
   omniauth-google-oauth2
   omniauth-rails_csrf_protection (~> 1.0)
