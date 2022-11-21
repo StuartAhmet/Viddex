@@ -9,6 +9,7 @@ gem "rails", "~> 7.0.4"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
+
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
 
@@ -36,7 +37,7 @@ gem "popper_js"
 gem 'public_uid'
 
 gem "rails_admin", "~> 3.0"
-gem "jsbundling-rails", "~> 0.1.7"
+# gem "jsbundling-rails", "~> 0.1.7"
 
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
